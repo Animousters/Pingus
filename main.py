@@ -10,11 +10,11 @@ bot = commands.Bot()
 async def on_ready():
     print(f'We have logged on as {bot.user}!')
 
-@bot.slash_command()
+@bot.slash_command(description="Replies with Pong!")
 async def ping(inter):
     await inter.response.send_message("Pong!")
 
-@bot.slash_command()
+@bot.slash_command(description="Displays server member count")
 async def membercount(inter):
     memberCount = disnake.Embed(
         title=inter.guild.name,
@@ -31,7 +31,7 @@ async def membercount(inter):
     )
     await inter.send(embed=memberCount)
 
-@bot.slash_command()
+@bot.slash_command(description="Displays user stats")
 async def user(inter):
     userStats=disnake.Embed(
         title=inter.guild.name,
