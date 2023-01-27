@@ -44,7 +44,7 @@ async def user(inter):
     userStats.set_author(
         name=bot.user,
         url="https://github.com/Animousters/Pingus",
-        icon_url="https://github.com/Animousters/Pingus/blob/main/assets/pingus.png"
+        icon_url="https://raw.githubusercontent.com/Animousters/Pingus/main/assets/pingus.png"
     )
     userStats.set_footer(
         text=f'{bot.user} made by 9847#6709'
