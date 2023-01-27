@@ -24,6 +24,10 @@ async def membercount(inter):
     memberCount.set_author(
         name=bot.user,
         url="https://github.com/Animousters/Pingus",
+        icon_url="https://github.com/Animousters/Pingus/blob/main/assets/pingus.png"
+    )
+    memberCount.set_footer(
+        text=f'{bot.user} made by 9847#6709'
     )
     await inter.response.send_message(f'Server: {inter.guild.name}\nTotal Members: {inter.guild.member_count}')
 
