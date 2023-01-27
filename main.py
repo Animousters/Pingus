@@ -18,13 +18,13 @@ async def ping(inter):
 async def membercount(inter):
     memberCount = disnake.Embed(
         title=inter.guild.name,
-        description=inter.guild.member_count,
+        description=f'Members: {inter.guild.member_count}',
         color=disnake.Color.orange(),      
     )
     memberCount.set_author(
         name=bot.user,
         url="https://github.com/Animousters/Pingus",
-        icon_url="https://github.com/Animousters/Pingus/blob/main/assets/pingus.png"
+        icon_url="https://raw.githubusercontent.com/Animousters/Pingus/main/assets/pingus.png"
     )
     memberCount.set_footer(
         text=f'{bot.user} made by 9847#6709'
