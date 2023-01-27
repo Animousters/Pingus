@@ -1,5 +1,6 @@
 import disnake
 from disnake.ext import commands
+import config
 
 # Creating a commands.Bot() instance, and assigning it to "bot"
 bot = commands.Bot()
@@ -15,6 +16,15 @@ async def ping(inter):
 
 @bot.slash_command()
 async def membercount(inter):
+    memberCount = disnake.Embed(
+        title=inter.guild.name,
+        description=inter.guild.member_count,
+        color=disnake.Color.orange(),      
+    )
+    memberCount.set_author(
+        name=bot.user,
+        url="https://github.com/Animousters/Pingus",
+    )
     await inter.response.send_message(f'Server: {inter.guild.name}\nTotal Members: {inter.guild.member_count}')
 
 @bot.slash_command()
@@ -22,4 +32,4 @@ async def user(inter):
     await inter.response.send_message(f"Your tag: {inter.author}\nYour ID: {inter.author.id}")
 
 # Login to Discord with the bot's token.
-bot.run("MTAyNzAxODkyNDgzNzA0ODMzMA.GghdJZ.hVGfquJTFe_ydDOR5OI-kqtvhcO4fakAaSkyus")
+bot.run(config.TOKEN)
