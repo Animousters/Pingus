@@ -29,11 +29,11 @@ async def membercount(inter):
     memberCount.set_footer(
         text=f'{bot.user} made by 9847#6709'
     )
-    await inter.response.send_message(f'Server: {inter.guild.name}\nTotal Members: {inter.guild.member_count}')
+    await inter.send(embed=memberCount)
 
 @bot.slash_command()
 async def user(inter):
-    await inter.send(embed=membercount)
+    await inter.response.send_message(f"Your tag: {inter.author}\nYour ID: {inter.author.id}")
 
 # Login to Discord with the bot's token.
 bot.run(config.TOKEN)
