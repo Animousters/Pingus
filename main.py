@@ -33,7 +33,23 @@ async def membercount(inter):
 
 @bot.slash_command()
 async def user(inter):
-    await inter.response.send_message(f"Your tag: {inter.author}\nYour ID: {inter.author.id}")
+    userStats=disnake.Embed(
+        title=inter.guild.name,
+        description=f'Username:\n{inter.author}\n\nNickname:\n{inter.author.nick}\n\nUser ID:\n{inter.author}\n\nAccount Created At:\n{inter.author.created_at}\n\nJoined Server At:\n{inter.author.joined_at}\n\nRoles:\n{inter.author.roles}',
+        color=disnake.Color.orange()
+    )
+    userStats.set_thumbnail(
+        url=inter.author.avatar
+    )
+    userStats.set_author(
+        name=bot.user,
+        url="https://github.com/Animousters/Pingus",
+        icon_url="https://github.com/Animousters/Pingus/blob/main/assets/pingus.png"
+    )
+    userStats.set_footer(
+        text=f'{bot.user} made by 9847#6709'
+    )
+    await inter.send(embed=userStats)
 
 # Login to Discord with the bot's token.
 bot.run(config.TOKEN)
