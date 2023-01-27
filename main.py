@@ -33,7 +33,7 @@ async def membercount(inter):
 
 @bot.slash_command()
 async def user(inter):
-    await inter.response.send_message(f"Your tag: {inter.author}\nYour ID: {inter.author.id}")
+    await inter.send(embed=membercount)
 
 # Login to Discord with the bot's token.
 bot.run(config.TOKEN)
